@@ -1,25 +1,24 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const urlParams = new URLSearchParams(window.location.search);
-  const brand = urlParams.get("brand");
-  const model = urlParams.get("model");
+const specList = document.getElementById('specList');
+const phoneTitle = document.getElementById('phoneTitle');
+const API_KEY = '5dd11b6c96msh88d9de4d9f1bb68p14ee6djsna05dff3e60e9';
 
-  fetch("data.json")
-    .then(res => res.json())
-    .then(data => {
-      const specsDiv = document.getElementById("specs");
-      const title = document.getElementById("model-title");
+const urlParams = new URLSearchParams(window.location.search);
+const slug = urlParams.get('slug');
 
-      const phone = data.find(item => item.brand === brand && item.model === model);
-
-      if (phone) {
-        title.textContent = `${phone.brand} ${phone.model}`;
-        for (const [key, value] of Object.entries(phone.specs)) {
-          const p = document.createElement("p");
-          p.innerHTML = `<strong>${key}:</strong> ${value}`;
-          specsDiv.appendChild(p);
-        }
-      } else {
-        specsDiv.innerHTML = "<p>Specs not found.</p>";
-      }
-    });
-});
+fetch(`https://mobile-phones2.p.rapidapi.com/phones/${slug}`, {
+  method: 'GET',
+  headers: {
+    'X-RapidAPI-Key': API_KEY,
+    'Accept': 'application/json'
+  }
+})
+.then(response => response.json())
+.then(data => {
+  phoneTitle.textContent = data.phone_name;
+  for (const [key, value] of Object.entries(data.specifications)) {
+    const div = document.createElement('div');
+    div.innerHTML = `<strong>${key}</strong>: ${value}`;
+    specList.appendChild(div);
+  }
+})
+.catch(err => console.error(err));
