@@ -1,0 +1,57 @@
+[
+  {
+    "brand": "Samsung",
+    "model": "Galaxy S24",
+    "specs": {
+      "display": "6.1-inch AMOLED",
+      "chipset": "Snapdragon 8 Gen 3",
+      "ram": "8GB",
+      "storage": "128GB",
+      "battery": "4000mAh"
+    }
+  },
+  {
+    "brand": "Apple",
+    "model": "iPhone 15",
+    "specs": {
+      "display": "6.1-inch Super Retina XDR",
+      "chipset": "A16 Bionic",
+      "ram": "6GB",
+      "storage": "128GB",
+      "battery": "3349mAh"
+    }
+  },
+  {
+    "brand": "Xiaomi",
+    "model": "Redmi Note 13 Pro",
+    "specs": {
+      "display": "6.67-inch AMOLED",
+      "chipset": "Snapdragon 7s Gen 2",
+      "ram": "8GB",
+      "storage": "256GB",
+      "battery": "5100mAh"
+    }
+  },
+  {
+    "brand": "OnePlus",
+    "model": "OnePlus 12",
+    "specs": {
+      "display": "6.82-inch AMOLED",
+      "chipset": "Snapdragon 8 Gen 3",
+      "ram": "12GB",
+      "storage": "256GB",
+      "battery": "5400mAh"
+    }
+  },
+  {
+    "brand": "Realme",
+    "model": "Realme 12 Pro+",
+    "specs": {
+      "display": "6.7-inch AMOLED",
+      "chipset": "Snapdragon 7s Gen 2",
+      "ram": "8GB",
+      "storage": "128GB",
+      "battery": "5000mAh"
+    }
+  }
+]
